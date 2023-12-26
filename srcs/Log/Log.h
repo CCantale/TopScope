@@ -63,7 +63,7 @@
 # include <sys/time.h>
 # include <string>
 
-# include "colors.h"
+# include "../colors.h"
 
 namespace Log
 {
