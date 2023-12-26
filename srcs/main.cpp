@@ -40,14 +40,8 @@ static char	getTask(void)
 	return (task);
 }
 
-int	main(void)
+static void	runTask(char task)
 {
-	char	task;
-
-	task = getTask();
-	if (task == 'l' || task == 'q')
-		return (0);
-	Log::init();
 /*
 	Scope		scope(SCOPE_FILE_PATH);
 	AppList		list(APPLIST_FILE_PATH);
@@ -56,6 +50,18 @@ int	main(void)
 	
 	output.open(OUTPUT_FILE, std::ifstream::trunc);
 */
+}
+
+int	main(void)
+{
+	char	task;
+
+	task = getTask();
+	if (task == 'l' || task == 'q')
+		return (0);
+	Log::init();
+	Log::lout << "Code Starts Here..." << std::endl;
+	runTask(task);
 	Log::lout << "... Code Ends Here." << std::endl;
 	Log::quit();
 	return (0);
