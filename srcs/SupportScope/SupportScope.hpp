@@ -1,25 +1,31 @@
 /******************************************************************************/
 /*                                                                            */
 /*                                                                            */
-/*    macros.h                                         created by ccantale    */
+/*    SupportScope.hpp                                 created by ccantale    */
 /*                                                                            */
 /*    project: TopScope                        claudio.cantale93@gmail.com    */
 /*                                                                            */
 /*                                                                            */
 /******************************************************************************/
 
-#ifndef MACROS_H
-# define MACROS_H
+#ifndef SUPPORTSCOPE_HPP
+# define SUPPORTSCOPE_HPP
 
-# define APP_NAME			"TopScope"
-# define VERSION			"0.1"
+# include "../TabColumn/TabColumn.hpp"
 
-# define APP_LIST_PATH			"applist.txt"
-# define OUTPUT_FILE_PATH		"result.txt"
+# define SUPPORT_SCOPE_FILE_PATH	"scope.txt"
 
-# define OK				0
-# define NOT_OK				1
-# define SUCCESS			0
-# define FAILURE			1
+class	SupportScope
+{
+	private:
+		TabColumn	apps;
+
+	public:
+				SupportScope(void);
+				~SupportScope(void);
+				SupportScope(SupportScope const &toCopy);
+		SupportScope	&operator=(SupportScope const &toCopy);
+		applist	const	&getApps(void) const;
+};
 
 #endif

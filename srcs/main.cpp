@@ -31,7 +31,7 @@ static char	getTask(void)
 			<< "\n\n"
 			<< "Press " << BLUE << "q" << ENDCOLOR << " to exit"
 			<< "\n\n";
-	while (!(task == 'l' || task == 'q'))
+	while (!(task == 'l' || task == 'q' || task == 'c'))
 	{
 		task = getch();
 	}
@@ -42,6 +42,7 @@ static char	getTask(void)
 
 static void	runTask(char task)
 {
+	(void)task;
 /*
 	Scope		scope(SCOPE_FILE_PATH);
 	AppList		list(APPLIST_FILE_PATH);
@@ -60,9 +61,9 @@ int	main(void)
 	if (task == 'l' || task == 'q')
 		return (0);
 	Log::init();
-	Log::lout << "Code Starts Here..." << std::endl;
+	Log::lout << timestamp << APP_NAME << " started." << std::endl;
 	runTask(task);
-	Log::lout << "... Code Ends Here." << std::endl;
+	Log::lout << timestamp << "All processes terminated successfully." << std::endl;
 	Log::quit();
 	return (0);
 }

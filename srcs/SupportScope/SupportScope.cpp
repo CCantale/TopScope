@@ -1,25 +1,22 @@
 /******************************************************************************/
 /*                                                                            */
 /*                                                                            */
-/*    macros.h                                         created by ccantale    */
+/*    SupportScope.cpp                                 created by ccantale    */
 /*                                                                            */
 /*    project: TopScope                        claudio.cantale93@gmail.com    */
 /*                                                                            */
 /*                                                                            */
 /******************************************************************************/
 
-#ifndef MACROS_H
-# define MACROS_H
+#include "SupportScope.hpp"
 
-# define APP_NAME			"TopScope"
-# define VERSION			"0.1"
+SupportScope::SupportScope(void) : apps(SUPPORT_SCOPE_FILE_PATH)
+{
+	;
+}
 
-# define APP_LIST_PATH			"applist.txt"
-# define OUTPUT_FILE_PATH		"result.txt"
-
-# define OK				0
-# define NOT_OK				1
-# define SUCCESS			0
-# define FAILURE			1
-
-#endif
+SupportScope::~SupportScope(void)
+{
+	;
+}
+	

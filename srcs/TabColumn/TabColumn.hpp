@@ -1,25 +1,35 @@
 /******************************************************************************/
 /*                                                                            */
 /*                                                                            */
-/*    macros.h                                         created by ccantale    */
+/*    TabColumn.hpp                                    created by ccantale    */
 /*                                                                            */
 /*    project: TopScope                        claudio.cantale93@gmail.com    */
 /*                                                                            */
 /*                                                                            */
 /******************************************************************************/
 
-#ifndef MACROS_H
-# define MACROS_H
+#ifndef TABCOLUMN_HPP
+# define TABCOLUMN_HPP
 
-# define APP_NAME			"TopScope"
-# define VERSION			"0.1"
+# include <string>
+# include <list>
 
-# define APP_LIST_PATH			"applist.txt"
-# define OUTPUT_FILE_PATH		"result.txt"
+using column_t = std::list<std::string>;
 
-# define OK				0
-# define NOT_OK				1
-# define SUCCESS			0
-# define FAILURE			1
+class TabColumn
+{
+	private:
+		column_t	_column;
+		
+	public:
+				TabColumn(void);
+				~TabColumn(void);
+				TabColumn(std::string filePath);
+				TabColumn(TabColumn const &toCopy);
+		TabColumn	&operator=(TabColumn const &toCopy);
+		TabColumn	&operator[](unsigned int i);
+		column_t const	&get(void) const;
+		void		set(unsigned int i, std::string newEntry);
+};
 
 #endif
